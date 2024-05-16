@@ -1,0 +1,3 @@
+services:
+ clockwidget.gettimezone:
+   class: Drupal\clockwidget\UserGetTimeZone

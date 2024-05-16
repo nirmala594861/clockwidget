@@ -1,0 +1,25 @@
+uuid: b0192b1a-3b29-4c0f-82eb-c051f9a025e8
+langcode: en
+status: true
+dependencies:
+  module:
+    - clockwidget
+    - system
+  theme:
+    - olivero
+id: clockwidgetblocks
+theme: olivero
+region: sidebar
+weight: 0
+provider: null
+plugin: clockwidget_block
+settings:
+  id: clockwidget_block
+  label: 'clockwidget blocks'
+  label_display: visible
+  provider: clockwidget
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

@@ -1,0 +1,7 @@
+name: clockwidget block guide
+description: Provides clockwidget Site builders.
+type: module
+core_version_requirement: ^8.8.0 || ^9 || ^10
+dependencies:
+ - drupal:block
+ - drupal:config

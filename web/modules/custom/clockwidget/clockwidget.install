@@ -1,0 +1,52 @@
+<?php
+
+/**
+ * @file
+ * Contains hooks for install file.
+ */
+
+/**
+ * Implements hook_schema().
+ *
+ * Defines the database tables used by this module.
+ *
+ * @see hook_schema()
+ *
+ * @ingroup clockwidget
+ */
+function clockwidget_schema() {
+  $schema['usertimezone_schema'] = [
+    'description' => 'Stores entries for timezone requests.',
+    'fields' => [
+      'id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+        'description' => 'Primary Key: Unique request ID.',
+      ],
+      'inviter_uid' => [
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'user Id of user or admin',
+      ],
+      'usertimezone' => [
+        'type' => 'varchar',
+        'length' => 255,
+        'NOT NULL' => TRUE,
+        'description' => 'User time zone.',
+      ],
+      'date' => [
+        'description' => 'The date of request access',
+        'type' => 'varchar',
+        'mysql_type' => 'datetime',
+        'not null' => FALSE,
+      ],
+    ],
+    'primary key' => ['id'],
+    'indexes' => [
+      'inviter_uid' => ['inviter_uid'],
+    ],
+  ];
+
+  return $schema;
+}

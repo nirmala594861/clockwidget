@@ -1,0 +1,9 @@
+clockwidget.user_redirect:
+  path: '/user-redirect'
+  defaults:
+    _controller: '\Drupal\clockwidget\Controller\MySubscription::render'
+    _title: 'Userpage'
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: 'TRUE'
